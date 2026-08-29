@@ -75,23 +75,6 @@ class HomepageDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/settings');
             },
           ),
-
-          ListTile(
-            leading: Icon(Icons.info_outline_rounded, size: 30),
-
-            title: Text(
-              "About",
-              style: TextStyle(
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/about');
-            },
-          ),
         ],
       ),
     );

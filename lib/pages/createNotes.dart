@@ -31,12 +31,6 @@ class _NewNotePageState extends State<NewNotes> {
         backgroundColor: Color(0xFFFAF9F6),
       ),
 
-      body: Padding(
-        padding: EdgeInsetsGeometry.only(top: 10),
-        child: Column(children: [
-          ],
-        ),
-      ),
       backgroundColor: Color(0xFFFAF9F6),
     );
   }
