@@ -15,7 +15,7 @@ class _BinState extends State<Bin> {
       backgroundColor: primaryColor,
 
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor:secondaryaccentcolor,
         title: const Text(
           'Bin',
           style: TextStyle(

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants/constants.dart';
 
-const settingsPagePadding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
-
 class Settings extends StatelessWidget {
   const Settings({super.key});
 
@@ -12,7 +10,7 @@ class Settings extends StatelessWidget {
       backgroundColor: primaryColor,
 
       appBar: AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: secondaryaccentcolor,
 
         title: const Text(
           'Settings',
@@ -37,7 +35,7 @@ class Settings extends StatelessWidget {
 
         children: [
           Container(
-            padding: settingsPagePadding,
+            padding: padding,
 
             child: SwitchListTile(
               title: Text(
@@ -61,7 +59,7 @@ class Settings extends StatelessWidget {
           divider,
 
           Container(
-            padding: settingsPagePadding,
+            padding: padding,
 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

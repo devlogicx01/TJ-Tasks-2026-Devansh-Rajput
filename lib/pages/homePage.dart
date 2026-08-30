@@ -26,7 +26,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
 
-        backgroundColor: primaryColor,
+        backgroundColor:secondaryaccentcolor,
 
         actions: [
           Padding(

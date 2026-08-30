@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 const primaryfont = 'Roboto';
 const headingSize = 22.0;
 
-
 //Divider
 const divider = Divider(
   thickness: 2,
@@ -12,3 +11,6 @@ const divider = Divider(
   indent: 20,
   endIndent: 20,
 );
+
+//Padding
+const padding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
