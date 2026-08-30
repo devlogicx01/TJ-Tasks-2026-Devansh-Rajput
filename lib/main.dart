@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/pages/createNotes.dart';
-import 'package:notes_app/pages/homePage.dart';
-import 'package:notes_app/pages/settings.dart';
-import 'package:notes_app/pages/bin.dart';
-
+import 'package:notes_app/pages/pages.dart';
 
 void main() {
   runApp(const Notes());

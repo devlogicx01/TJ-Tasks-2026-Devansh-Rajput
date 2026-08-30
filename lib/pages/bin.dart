@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants/constants.dart';
 
 class Bin extends StatefulWidget {
   const Bin({super.key});
@@ -11,16 +12,16 @@ class _BinState extends State<Bin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF9F6),
+      backgroundColor: primaryColor,
 
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAF9F6),
+        backgroundColor: primaryColor,
         title: const Text(
           'Bin',
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: primaryfont,
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: headingSize,
           ),
         ),
 

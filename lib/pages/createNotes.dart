@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants/constants.dart';
+
 
 class NewNotes extends StatefulWidget {
   const NewNotes({super.key});
@@ -23,15 +25,15 @@ class _NewNotePageState extends State<NewNotes> {
         title: const Text(
           'Add Note',
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: primaryfont,
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: headingSize,
           ),
         ),
-        backgroundColor: Color(0xFFFAF9F6),
+        backgroundColor: primaryColor,
       ),
 
-      backgroundColor: Color(0xFFFAF9F6),
+      backgroundColor: primaryColor,
     );
   }
 }

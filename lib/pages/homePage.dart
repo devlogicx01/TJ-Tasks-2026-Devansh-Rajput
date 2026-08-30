@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/homepageDrawer.dart';
+import 'package:notes_app/widgets/widgets.dart';
+import 'package:notes_app/constants/constants.dart';
 
-class Homepage extends StatelessWidget {
+
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF9F6),
+      backgroundColor: primaryColor,
 
       appBar: AppBar(
         title: Text(
           'Notes',
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: primaryfont,
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: headingSize,
           ),
         ),
 
-        backgroundColor: Color(0xFFFAF9F6),
+        backgroundColor: primaryColor,
 
         actions: [
           Padding(
@@ -38,8 +46,8 @@ class Homepage extends StatelessWidget {
           Navigator.pushNamed(context, '/newNotes');
         },
 
-        backgroundColor: Colors.deepPurpleAccent,
-        foregroundColor: Color(0xFFFAF9F6),
+        backgroundColor: secondaryColor,
+        foregroundColor: primaryColor,
         elevation: 0,
         shape: CircleBorder(),
 

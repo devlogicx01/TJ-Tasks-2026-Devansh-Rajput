@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants/constants.dart';
 
 class HomepageDrawer extends StatelessWidget {
   const HomepageDrawer({super.key});
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color(0xFFFAF9F6),
+      backgroundColor: primaryColor,
       shape: LinearBorder(),
 
       child: Column(
@@ -18,7 +19,7 @@ class HomepageDrawer extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: const Color.fromARGB(244, 124, 77, 255),
+                  backgroundColor: secondaryColor,
                   radius: 25,
 
                   child: Icon(
@@ -33,8 +34,8 @@ class HomepageDrawer extends StatelessWidget {
                 Text(
                   "My Notes",
                   style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 20,
+                    fontFamily: primaryfont,
+                    fontSize: headingSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -48,7 +49,7 @@ class HomepageDrawer extends StatelessWidget {
             title: Text(
               "Bin",
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: primaryfont,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -65,7 +66,7 @@ class HomepageDrawer extends StatelessWidget {
             title: Text(
               "Settings",
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: primaryfont,
                 fontWeight: FontWeight.bold,
               ),
             ),

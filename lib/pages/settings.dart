@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants/color.dart';
+import 'package:notes_app/constants/constants.dart';
 
 const settingsPagePadding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
 
@@ -8,17 +10,17 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAF9F6),
+      backgroundColor: primaryColor,
 
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAF9F6),
+        backgroundColor: primaryColor,
 
         title: const Text(
           'Settings',
           style: TextStyle(
-            fontFamily: 'Roboto',
+            fontFamily: primaryfont,
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: headingSize,
           ),
         ),
 
@@ -42,7 +44,7 @@ class Settings extends StatelessWidget {
               title: Text(
                 "Dark Mode",
                 style: TextStyle(
-                  fontFamily: 'Roboto',
+                  fontFamily: primaryfont,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -57,12 +59,7 @@ class Settings extends StatelessWidget {
             ),
           ),
 
-          Divider(
-            thickness: 2,
-            color: Color(0xFFE5E5E5),
-            indent: 20,
-            endIndent: 20,
-          ),
+          divider,
 
           Container(
             padding: settingsPagePadding,
@@ -73,7 +70,7 @@ class Settings extends StatelessWidget {
               children: [
                 Text(
                   "About",
-                  style: TextStyle(fontFamily: 'roboto', fontSize: 15),
+                  style: TextStyle(fontFamily: primaryfont, fontSize: 15),
                 ),
 
                 Padding(padding: EdgeInsets.only(top: 5)),
@@ -81,12 +78,12 @@ class Settings extends StatelessWidget {
                 Text(
                   "Version",
                   style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: primaryfont,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
 
-                Text("1.0.0", style: TextStyle(fontFamily: 'roboto')),
+                Text("1.0.0", style: TextStyle(fontFamily: primaryfont)),
               ],
             ),
           ),
