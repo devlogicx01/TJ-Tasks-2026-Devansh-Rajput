@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants/color.dart';
 import 'package:notes_app/constants/constants.dart';
 
 const settingsPagePadding = EdgeInsets.symmetric(horizontal: 20, vertical: 20);
