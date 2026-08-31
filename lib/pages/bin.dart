@@ -15,7 +15,7 @@ class _BinState extends State<Bin> {
       backgroundColor: primaryColor,
 
       appBar: AppBar(
-        backgroundColor:secondaryaccentcolor,
+        backgroundColor: secondaryaccentcolor,
         title: const Text(
           'Bin',
           style: TextStyle(
@@ -33,7 +33,18 @@ class _BinState extends State<Bin> {
         ),
       ),
 
-      body: const Center(child: Text('No deleted notes')),
+      body: const Center(
+        child: Text(
+          'Notes you delete will appear here.\nThey will be permanently deleted\nafter 30 days',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: primaryfont,
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            letterSpacing: 1.0,
+          ),
+        ),
+      ),
     );
   }
 }

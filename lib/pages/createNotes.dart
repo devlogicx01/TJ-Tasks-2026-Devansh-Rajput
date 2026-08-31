@@ -23,12 +23,19 @@ class _NewNotePageState extends State<NewNotes> {
           icon: Icon(Icons.arrow_back_rounded, size: 28),
         ),
 
-        title: const Text(
-          'Add Note',
+        title: TextField(
           style: TextStyle(
             fontFamily: primaryfont,
             fontWeight: FontWeight.bold,
             fontSize: headingSize,
+          ),
+          maxLines: 1,
+          maxLength: 25,
+          decoration: InputDecoration(
+            counterText: '',
+            hintText: 'Enter Title',
+            hintStyle: TextStyle(fontFamily: primaryfont),
+            border: InputBorder.none,
           ),
         ),
         backgroundColor: secondaryaccentcolor,
@@ -50,45 +57,28 @@ class _NewNotePageState extends State<NewNotes> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Title",
-              style: TextStyle(
-                fontFamily: primaryfont,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
-            ),
-
-            TextField(
-              maxLines: 1,
-              maxLength: 25,
-              decoration: InputDecoration(
-                counterText: '',
-                hintText: 'Enter Title',
-                hintStyle: TextStyle(
-                  fontFamily: primaryfont,
-                  color: Colors.grey,
-                ),
-                border: InputBorder.none,
-              ),
-            ),
-
-            divider,
-            Padding(padding: EdgeInsets.only(top: 20)),
-
-            Text(
               "Note",
               style: TextStyle(
                 fontFamily: primaryfont,
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
+                fontSize: 16,
               ),
             ),
+
             Expanded(
               child: TextField(
-                maxLength: 1000,
-                minLines: 22,
+                //expands: true,
+                maxLength: 10000,
                 maxLines: null,
+
+                style: TextStyle(
+                  fontFamily: primaryfont,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+
                 decoration: InputDecoration(
+                  counterText: '',
                   hintText: 'Start writing your notes...',
                   hintStyle: TextStyle(
                     fontFamily: primaryfont,
