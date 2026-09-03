@@ -43,22 +43,22 @@ class HomepageDrawer extends StatelessWidget {
             ),
           ),
 
-          ListTile(
-            leading: Icon(Icons.delete_outline_rounded, size: 30),
+          // ListTile(
+          //   leading: Icon(Icons.delete_outline_rounded, size: 30),
 
-            title: Text(
-              "Bin",
-              style: TextStyle(
-                fontFamily: primaryfont,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          //   title: Text(
+          //     "Bin",
+          //     style: TextStyle(
+          //       fontFamily: primaryfont,
+          //       fontWeight: FontWeight.bold,
+          //     ),
+          //   ),
 
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/bin');
-            },
-          ),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //     Navigator.pushNamed(context, '/bin');
+          //   },
+          // ),
 
           ListTile(
             leading: Icon(Icons.settings_rounded, size: 30),

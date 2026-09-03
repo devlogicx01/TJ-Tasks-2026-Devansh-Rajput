@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note.dart';
 import 'package:notes_app/pages/pages.dart';
+
 
 void main() {
   runApp(const Notes());
@@ -22,9 +24,15 @@ class _NotesState extends State<Notes> {
 
       routes: {
         '/homePage': (context) => const Homepage(),
-        '/newNotes': (context) => const NewNotes(),
-        '/settings': (context) => const Settings(),
-        '/bin': (context) => const Bin(),
+
+        '/newNotes': (context) {
+          final note = ModalRoute.of(context)!.settings.arguments as Note?;
+
+          return NewNotes(note: note);
+        },
+
+        '/settings': (context) => Settings(),
+        //'/bin': (context) => const Bin(),
       },
     );
   }
