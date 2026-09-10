@@ -38,6 +38,13 @@ class Settings extends StatelessWidget {
             padding: padding,
 
             child: SwitchListTile(
+              subtitle: Text(
+                'Incomplete',
+                style: TextStyle(
+                  fontFamily: primaryfont,
+                  fontWeight: FontWeight.w200,
+                ),
+              ),
               title: Text(
                 "Dark Mode",
                 style: TextStyle(
@@ -65,10 +72,10 @@ class Settings extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
 
               children: [
-                Text(
-                  "About",
-                  style: TextStyle(fontFamily: primaryfont, fontSize: 15),
-                ),
+                // Text(
+                //   "About",
+                //   style: TextStyle(fontFamily: primaryfont, fontSize: 15),
+                // ),
 
                 Padding(padding: EdgeInsets.only(top: 5)),
 

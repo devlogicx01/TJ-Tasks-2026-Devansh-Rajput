@@ -229,6 +229,12 @@ class _HomepageState extends State<Homepage> {
                                         Navigator.pop(context);
                                         await storage.deleteNote(note.id);
                                         await loadNotes();
+
+                                        setState(() {
+                                          filteredNotes.removeWhere(
+                                            (_note) => _note.id == note.id,
+                                          );
+                                        });
                                       },
 
                                       shape: RoundedRectangleBorder(
@@ -278,84 +284,6 @@ class _HomepageState extends State<Homepage> {
                                 ),
                               ],
                             ),
-
-                            // trailing: IconButton(
-                            //   onPressed: () {
-                            //     showDialog(
-                            //       animationStyle: AnimationStyle(
-                            //         curve: Curves.easeOutCubic,
-                            //         duration: Duration(milliseconds: 200),
-                            //       ),
-
-                            //       context: context,
-                            //       builder: (context) {
-                            //         return AlertDialog(
-                            //           shape: RoundedRectangleBorder(
-                            //             borderRadius: BorderRadius.circular(20),
-                            //           ),
-
-                            //           content: Column(
-                            //             mainAxisSize: MainAxisSize.min,
-                            //             mainAxisAlignment:
-                            //                 MainAxisAlignment.start,
-
-                            //             children: [
-                            //               ListTile(
-                            //                 leading: Icon(Icons.edit_rounded),
-                            //                 title: Text(
-                            //                   'Edit',
-                            //                   style: TextStyle(
-                            //                     fontFamily: primaryfont,
-                            //                   ),
-                            //                 ),
-
-                            //                 onTap: () async {
-                            //                   Navigator.pop(context);
-                            //                   await Navigator.pushNamed(
-                            //                     context,
-                            //                     '/newNotes',
-                            //                     arguments: note,
-                            //                   );
-
-                            //                   await loadNotes();
-                            //                 },
-
-                            //                 shape: RoundedRectangleBorder(
-                            //                   borderRadius:
-                            //                       BorderRadius.circular(20),
-                            //                 ),
-                            //               ),
-
-                            //               ListTile(
-                            //                 leading: Icon(
-                            //                   Icons.delete_outline_rounded,
-                            //                 ),
-                            //                 title: Text(
-                            //                   'Delete',
-                            //                   style: TextStyle(
-                            //                     fontFamily: primaryfont,
-                            //                   ),
-                            //                 ),
-
-                            //                 onTap: () async {
-                            //                   Navigator.pop(context);
-                            //                   await storage.deleteNote(note.id);
-                            //                   await loadNotes();
-                            //                 },
-
-                            //                 shape: RoundedRectangleBorder(
-                            //                   borderRadius:
-                            //                       BorderRadius.circular(20),
-                            //                 ),
-                            //               ),
-                            //             ],
-                            //           ),
-                            //         );
-                            //       },
-                            //     );
-                            //   },
-                            //   icon: Icon(Icons.more_vert),
-                            // ),
                           ),
                         ),
                       );
