@@ -181,6 +181,19 @@ class _HomepageState extends State<Homepage> {
                           color: noteColors[index % noteColors.length],
                           elevation: 0,
                           child: ListTile(
+                            onTap: () async {
+                              isSearching = false;
+                              hasSearched = false;
+                              searchControl.clear();
+
+                              await Navigator.pushNamed(
+                                context,
+                                '/newNotes',
+                                arguments: note,
+                              );
+
+                              await loadNotes();
+                            },
                             onLongPress: () {
                               showDialog(
                                 animationStyle: AnimationStyle(
@@ -191,67 +204,36 @@ class _HomepageState extends State<Homepage> {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
+                                    contentPadding: EdgeInsets.zero,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
 
-                                    content: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                    content: ListTile(
+                                      tileColor: Colors.redAccent,
+                                      leading: Icon(
+                                        Icons.delete_outline_rounded,
+                                        size: 30,
+                                      ),
 
-                                      children: [
-                                        ListTile(
-                                          leading: Icon(Icons.edit_rounded),
-                                          title: Text(
-                                            'Edit',
-                                            style: TextStyle(
-                                              fontFamily: primaryfont,
-                                            ),
-                                          ),
-
-                                          onTap: () async {
-                                            Navigator.pop(context);
-                                            await Navigator.pushNamed(
-                                              context,
-                                              '/newNotes',
-                                              arguments: note,
-                                            );
-
-                                            await loadNotes();
-                                          },
-
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              20,
-                                            ),
-                                          ),
+                                      title: Text(
+                                        'Delete',
+                                        style: TextStyle(
+                                          fontFamily: primaryfont,
+                                          fontSize: headingSize,
+                                          fontWeight: FontWeight.bold,
                                         ),
+                                      ),
 
-                                        ListTile(
-                                          leading: Icon(
-                                            Icons.delete_outline_rounded,
-                                          ),
-                                          title: Text(
-                                            'Delete',
-                                            style: TextStyle(
-                                              fontFamily: primaryfont,
-                                            ),
-                                          ),
+                                      onTap: () async {
+                                        Navigator.pop(context);
+                                        await storage.deleteNote(note.id);
+                                        await loadNotes();
+                                      },
 
-                                          onTap: () async {
-                                            Navigator.pop(context);
-                                            await storage.deleteNote(note.id);
-                                            await loadNotes();
-                                          },
-
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                              20,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
                                     ),
                                   );
                                 },
@@ -401,9 +383,20 @@ class _HomepageState extends State<Homepage> {
                   padding: const EdgeInsets.only(bottom: 10),
 
                   child: Card(
+                    clipBehavior: Clip.antiAlias,
                     color: noteColors[index % noteColors.length],
                     elevation: 0,
+
                     child: ListTile(
+                      onTap: () async {
+                        await Navigator.pushNamed(
+                          context,
+                          '/newNotes',
+                          arguments: note,
+                        );
+
+                        await loadNotes();
+                      },
                       onLongPress: () {
                         showDialog(
                           animationStyle: AnimationStyle(
@@ -414,56 +407,36 @@ class _HomepageState extends State<Homepage> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
+                              contentPadding: EdgeInsets.zero,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
 
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                              content: ListTile(
+                                tileColor: Colors.redAccent,
+                                leading: Icon(
+                                  Icons.delete_outline_rounded,
+                                  size: 30,
+                                ),
 
-                                children: [
-                                  ListTile(
-                                    leading: Icon(Icons.edit_rounded),
-                                    title: Text(
-                                      'Edit',
-                                      style: TextStyle(fontFamily: primaryfont),
-                                    ),
-
-                                    onTap: () async {
-                                      Navigator.pop(context);
-                                      await Navigator.pushNamed(
-                                        context,
-                                        '/newNotes',
-                                        arguments: note,
-                                      );
-
-                                      await loadNotes();
-                                    },
-
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
+                                title: Text(
+                                  'Delete',
+                                  style: TextStyle(
+                                    fontFamily: primaryfont,
+                                    fontSize: headingSize,
+                                    fontWeight: FontWeight.bold,
                                   ),
+                                ),
 
-                                  ListTile(
-                                    leading: Icon(Icons.delete_outline_rounded),
-                                    title: Text(
-                                      'Delete',
-                                      style: TextStyle(fontFamily: primaryfont),
-                                    ),
+                                onTap: () async {
+                                  Navigator.pop(context);
+                                  await storage.deleteNote(note.id);
+                                  await loadNotes();
+                                },
 
-                                    onTap: () async {
-                                      Navigator.pop(context);
-                                      await storage.deleteNote(note.id);
-                                      await loadNotes();
-                                    },
-
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                  ),
-                                ],
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
                               ),
                             );
                           },
